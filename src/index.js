@@ -101,6 +101,21 @@ class Game extends React.Component {
             stepNumber: history.length,
             xIsNext: !this.state.xIsNext,
         });
+        setTimeout(function() {
+            if (calculateWinner(squares)) {
+              return alert(squares[i] + " won!!!");
+            }
+        }, 0);
+    }
+
+    restartGame() {
+        this.setState({
+            history: [{
+                squares: Array(9).fill(null),
+            }],
+            stepNumber: 0,
+            xIsNext: true,
+        });
     }
 
     render() {
@@ -112,7 +127,12 @@ class Game extends React.Component {
             const desc = move ? 'Go to move #' + move : 'Go to game start';
             return (
                 <li key={move}>
-                  <button onClick={() => this.jumpTo(move)}>{desc}</button>
+                    <button
+                        className="btn"
+                        onClick={() => this.jumpTo(move)}
+                    >
+                        {desc}
+                    </button>
                 </li>
             );
         });
@@ -133,8 +153,16 @@ class Game extends React.Component {
 
             </div>
             <div className="game-info">
-              <div>{status}</div>
+              <div><h2 className="text-center"> {status} </h2></div>
               <ol>{moves}</ol>
+            </div>
+            <div>
+                <button
+                    className="btn"
+                    onClick={() => this.restartGame()}
+                >
+                    Restart Game
+                </button>
             </div>
           </div>
         );

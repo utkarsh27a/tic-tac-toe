@@ -21,15 +21,15 @@ ol, ul {
   background: #fff;
   border: 1px solid #999;
   float: left;
-  font-size: 24px;
+  font-size: 60px;
   font-weight: bold;
   line-height: 34px;
-  height: 34px;
+  height: 140px;
   margin-right: -1px;
   margin-top: -1px;
   padding: 0;
   text-align: center;
-  width: 34px;
+  width: 200px;
 }
 
 .square:focus {
@@ -47,4 +47,20 @@ ol, ul {
 
 .game-info {
   margin-left: 20px;
+}
+
+.btn {
+    background: #1a73e8;
+    margin: 5px;
+    padding: 5px 15px;
+    border: 1px solid #1a73e8;
+    border-radius: 10px;
+    color: #fff;
+    font-size: 15px;
+}
+.text-center {
+  text-align: center;
+}
+.full-width {
+  width: 100%;
 }
